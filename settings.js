@@ -12,12 +12,12 @@ const chalk = require('chalk');
 global.owner = ['254701309409','254725100848'] //['628','628'] 2 owner
 global.packname = 'Lesta Whatsapp'
 global.author = 'Lesta_Eliud'
-global.botname = '___LESTA___Bot___'
+global.botname = '🇰🇪⁠LESTA_PRO۝'
 global.listprefix = ['+','!','.']
-global.listv = ['•','●','■','✿','▲','➩','➢','➣','➤','✦','✧','△','❀','○','□','♤','♡','◇','♧','々','〆']
+global.listv = ['➩','➢','➣','➤']
 global.tempatDB = 'database.json' // Taruh url mongodb di sini jika menggunakan mongodb. Format : 'mongodb+srv://...'
 global.pairing_code = true
-global.number_bot = '' // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
+global.number_bot = '254701309409' // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 
 global.fake = {
 	anonim: 'https://telegra.ph/file/95670d63378f7f4210f03.png',
@@ -35,29 +35,29 @@ global.my = {
 }
 
 global.limit = {
-	free: 99999,
-	premium: 9999,
-	vip: 99999
+	free: 99999999999999,
+	premium: 99999999999999,
+	vip: 99999999999999
 }
 
 global.uang = {
-	free: 10000000,
-	premium: 10000000,
-	vip: 10000000
+	free: 1000,
+	premium: 100000,
+	vip: 100000
 }
 
 global.mess = {
 	key: 'Apikey mu telah habis silahkan kunjungi\nhttps://my.hitori.pw',
 	owner: 'must be Owner!',
 	admin: 'must be Admin!',
-	botAdmin: 'Bot Bukan Admin!',
+	botAdmin: 'Bot must be Admin!',
 	group: 'Gunakan Di Group!',
-	private: 'Gunakan Di Privat Chat!',
+	private: 'Only Privat Chat!',
 	limit: 'Limit Anda Telah Habis!',
 	prem: 'Khusus User Premium!',
-	wait: 'Loading〰️...',
+	wait: 'Loading🍞...',
 	error: 'Error🚫!',
-	done: 'Done👍'
+	done: 'Done✅👍'
 }
 
 global.APIs = {
