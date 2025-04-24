@@ -3304,7 +3304,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 						set.template = parseInt(Number(args[1]))
 						m.reply('Sukses Mengubah Template Menu')
 					} else m.reply(`Silahkan Pilih Templat:\n- 1 (Button Menu)\n- 2 (List Menu)\n- 3 (Document Menu)`)
-				} else await templateMenu(naze, set.template, m, prefix, setv, db, { botNumber, isVip, isPremium })
+				} else await templateMenu(naze, set.template, m, prefix, setv, db, { botNumber, isVip })
 			}
 			break
 			case 'menu': {
@@ -3315,7 +3315,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 					profile = fake.anonim
 				}
 				const menunya = `
-╭──❍「 *USER INFO* 」❍
+╭──❍「 *L E S T A - P R O* 」❍
 ├ *Nama* : ${m.pushName ? m.pushName : 'Tanpa Nama'}
 ├ *Id* : @${m.sender.split('@')[0]}
 ├ *User* : ${isVip ? 'VIP' : isPremium ? 'PREMIUM' : 'FREE'}
@@ -3324,7 +3324,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 ╰─┬────❍
 ╭─┴─❍「 *BOT INFO* 」❍
 ├ *Nama Bot* : ${botname}
-|-*Bot Number* :${botnumber}
+|-*Bot Number* :'254701309409'
 ├ *Powered* : @${'0@s.whatsapp.net'.split('@')[0]}
 ├ *Owner* : @${owner[0].split('@')[0]}
 ├ *Mode* : ${naze.public ? 'Public' : 'Self'}
