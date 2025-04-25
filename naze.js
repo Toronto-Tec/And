@@ -200,7 +200,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 			// Anti Hidetag
 			if (!m.key.fromMe && m.mentionedJid?.length === m.metadata.participants.length && db.groups[m.chat].antihidetag && !isCreator && m.isBotAdmin && !m.isAdmin) {
 				await naze.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: m.id, participant: m.sender }})
-				await m.reply('*Anti Hidetag Sedang Aktif❗*')
+				await m.reply('*Anti Hidetag Set on❗*')
 			}
 			
 			// Anti Tag Sw
@@ -215,7 +215,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 						delete db.groups[m.chat].tagsw[m.sender]
 					} else {
 						db.groups[m.chat].tagsw[m.sender] += 1
-						await m.reply(`Grup ini terdeteksi ditandai dalam Status WhatsApp\n@${m.sender.split('@')[0]}, mohon untuk tidak menandai grup dalam status WhatsApp\nPeringatan ${db.groups[m.chat].tagsw[m.sender]}/5, akan dikick sewaktu waktu❗`)
+						await m.reply(`Grup mentioned in  Status WhatsApp\n@${m.sender.split('@')[0]}, mohon untuk tidak menandai grup dalam status WhatsApp\nPeringatan ${db.groups[m.chat].tagsw[m.sender]}/5, akan dikick sewaktu waktu❗`)
 					}
 				}
 			}
@@ -1317,7 +1317,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 				for (let i = 0; i < entries.length; i++) {
 					teksnya += `│• ${i + 1}. @${entries[i].split('@')[0]}\n│• Balance : ${db.users[entries[i]].uang.toLocaleString('id-ID')}\n│\n`
 				}
-				m.reply(teksnya + '╰──────❍');
+				m.reply(teksnya + '╰──⟨LESTA_PRO_V1⟩────❍');
 			}
 			break
 			case 'totalpesan': {
@@ -1378,31 +1378,31 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 						naze.public = set.public = true
 						set.grouponly = true
 						set.privateonly = true
-						m.reply('*Sukse Change To Public Usage*')
+						m.reply('*Successfully mode changed to public,,,🇰🇪 anyone can use the bot 👥*')
 					} else if (teks[1] == 'self') {
 						set.grouponly = false
-						set.privateonly = false
+						set.privateonly = true
 						naze.public = set.public = false
-						m.reply('*Sukse Change To Self Usage*')
+						m.reply('*Successfully changed to only owner can use commands 😁✅*')
 					} else if (teks[1] == 'group') {
 						set.grouponly = true
 						set.privateonly = false
-						m.reply('*Sukse Change To Group Only*')
+						m.reply('*Successfully Changed mode To Group 👥Only*')
 					} else if (teks[1] == 'private') {
 						set.grouponly = false
 						set.privateonly = true
-						m.reply('*Sukse Change To Private Only*')
+						m.reply('*Sukse Change To Private Only👤*')
 					} else m.reply('Mode self/public/group/private/all')
 					break
 					case 'anticall': case 'autobio': case 'autoread': case 'autotyping': case 'readsw': case 'multiprefix': case 'antispam':
 					if (!isCreator) return m.reply(mess.owner)
 					if (teks[1] == 'on') {
-						if (set[teks[0]]) return m.reply('*Sudah Aktif Sebelumnya*')
+						if (set[teks[0]]) return m.reply('*Autobio Successfully set on*')
 						set[teks[0]] = true
-						m.reply('*Sukse Change To On*')
+						m.reply('*Successfully Changed To On*')
 					} else if (teks[1] == 'off') {
 						set[teks[0]] = false
-						m.reply('*Sukse Change To Off*')
+						m.reply('*Successfully Changed To Off*')
 					} else m.reply(`${teks[0].charAt(0).toUpperCase() + teks[0].slice(1)} on/off`)
 					break
 					case 'set': case 'settings':
@@ -1453,7 +1453,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 			}
 			break
 			case 'speedtest': case 'speed': {
-				m.reply('Testing Speed...')
+				m.reply('Testing Speed😁👥🇰🇪😹...')
 				let cp = require('child_process')
 				let { promisify } = require('util')
 				let exec = promisify(cp.exec).bind(cp)
@@ -1527,7 +1527,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 				let msgs = db.database
 				if (text == 'allmsg') {
 					db.database = {}
-					m.reply('Berhasil menghapus seluruh msg dari list pesan')
+					m.reply('give message list pesan')
 				} else {
 					if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' tidak terdaftar didalam list pesan`)
 					delete msgs[text.toLowerCase()]
@@ -3315,7 +3315,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 					profile = fake.anonim
 				}
 				const menunya = `
-╭──❍「 *USER INFO* 」❍
+╭──❍「 * ⟨LESTA_PRO_V1⟩ * 」❍
 ├ *Nama* : ${m.pushName ? m.pushName : 'Tanpa Nama'}
 ├ *Id* : @${m.sender.split('@')[0]}
 ├ *User* : ${isVip ? 'VIP' : isPremium ? 'PREMIUM' : 'FREE'}
@@ -3561,7 +3561,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} $
 │${setv} >
 │${setv} <
-╰──────❍`
+╰───⟨LESTA_PRO_V1⟩───❍`
 				await m.reply({
 					caption: menunya,
 					contextInfo: {
@@ -3590,7 +3590,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 			break
 			case 'botmenu': {
 				m.reply(`
-╭──❍「 *BOT* 」❍
+╭──❍「 *⟨LESTA_PRO_V1⟩* 」❍
 │${setv} ${prefix}profile
 │${setv} ${prefix}claim
 │${setv} ${prefix}buy [item] (nominal)
@@ -3618,7 +3618,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}stopjadibot
 │${setv} ${prefix}listjadibot
 │${setv} ${prefix}donasi
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 			case 'groupmenu': {
@@ -3643,7 +3643,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}listonline
 │${setv} ${prefix}group set
 │${setv} ${prefix}group (khusus admin)
-╰──────❍`)
+╰────⟨LESTA_PRO_V1⟩──❍`)
 			}
 			break
 			case 'searchmenu': {
@@ -3662,7 +3662,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}cuaca (kota)
 │${setv} ${prefix}tenor (query)
 │${setv} ${prefix}urban (query)
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 			case 'downloadmenu': {
@@ -3676,7 +3676,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}facebook (url)
 │${setv} ${prefix}spotifydl (url)
 │${setv} ${prefix}mediafire (url)
-╰──────❍`)
+╰────⟨LESTA_PRO_V1⟩──❍`)
 			}
 			break
 			case 'quotesmenu': {
@@ -3689,7 +3689,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}dare
 │${setv} ${prefix}bucin
 │${setv} ${prefix}renungan
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 			case 'toolsmenu': {
@@ -3736,7 +3736,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}earrape (reply audio)
 │${setv} ${prefix}nightcore (reply audio)
 │${setv} ${prefix}getexif (reply sticker)
-╰──────❍`)
+╰─────⟨LESTA_PRO_V1⟩─❍`)
 			}
 			break
 			case 'aimenu': {
@@ -3746,14 +3746,14 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}simi (query)
 │${setv} ${prefix}gemini (query)
 │${setv} ${prefix}txt2img (query)
-╰──────❍`)
+╰────⟨LESTA_PRO_V1⟩──❍`)
 			}
 			break
 			case 'randommenu': {
 				m.reply(`
 ╭──❍「 *RANDOM* 」❍
 │${setv} ${prefix}coffe
-╰──────❍`)
+╰─────⟨LESTA_PRO_V1⟩─❍`)
 			}
 			break
 			case 'stalkermenu': {
@@ -3765,7 +3765,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}tiktokstalk
 │${setv} ${prefix}githubstalk
 │${setv} ${prefix}genshinstalk
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 			case 'animemenu': {
@@ -3773,7 +3773,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 ╭──❍「 *ANIME* 」❍
 │${setv} ${prefix}waifu
 │${setv} ${prefix}neko
-╰──────❍`)
+╰──⟨LESTA_PRO_V1⟩────❍`)
 			}
 			break
 			case 'gamemenu': {
@@ -3800,7 +3800,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}tebaknegara
 │${setv} ${prefix}tebakgambar
 │${setv} ${prefix}tebakbendera
-╰──────❍`)
+╰────⟨LESTA_PRO_V1⟩──❍`)
 			}
 			break
 			case 'funmenu': {
@@ -3825,12 +3825,12 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} ${prefix}huluh (text)
 │${setv} ${prefix}heleh (text)
 │${setv} ${prefix}holoh (text)
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 			case 'ownermenu': {
 				m.reply(`
-╭──❍「 *OWNER* 」❍
+╭──❍「 *OWNER COMMANDS* 」❍
 │${setv} ${prefix}bot [set]
 │${setv} ${prefix}setbio
 │${setv} ${prefix}setppbot
@@ -3863,7 +3863,7 @@ module.exports = naze = async (naze, m, msg, store, groupCache) => {
 │${setv} $
 │${setv} >
 │${setv} <
-╰──────❍`)
+╰───⟨LESTA_PRO_V1⟩───❍`)
 			}
 			break
 
