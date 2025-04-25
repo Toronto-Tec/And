@@ -9,7 +9,7 @@ const chalk = require('chalk');
 
 //~~~~~~~~~~~~< GLOBAL SETTINGS >~~~~~~~~~~~~\\
 
-global.owner = ['254701309409','254725100848'] //['628','628'] 2 owner
+global.owner = ['254725100848'] //['628','628'] 2 owner
 global.packname = 'Lesta Whatsapp'
 global.author = 'Lesta_Eliud'
 global.botname = '🇰🇪⁠LESTA_PRO۝'
@@ -17,7 +17,7 @@ global.listprefix = ['+','!','.']
 global.listv = ['➩','➢','➣','➤']
 global.tempatDB = 'database.json' // Taruh url mongodb di sini jika menggunakan mongodb. Format : 'mongodb+srv://...'
 global.pairing_code = true
-global.number_bot = '254701309409' // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
+global.number_bot = '' // Kalo pake panel bisa masukin nomer di sini, jika belum ambil session. Format : '628xx'
 
 global.fake = {
 	anonim: 'https://telegra.ph/file/95670d63378f7f4210f03.png',
@@ -41,9 +41,9 @@ global.limit = {
 }
 
 global.uang = {
-	free: 1000,
-	premium: 100000,
-	vip: 100000
+	free: 100000,
+	premium: 100000000,
+	vip: 10000000000
 }
 
 global.mess = {
@@ -51,13 +51,14 @@ global.mess = {
 	owner: 'must be Owner!',
 	admin: 'must be Admin!',
 	botAdmin: 'Bot must be Admin!',
-	group: 'Gunakan Di Group!',
-	private: 'Only Privat Chat!',
-	limit: 'Limit Anda Telah Habis!',
-	prem: 'Khusus User Premium!',
-	wait: 'Loading🍞...',
-	error: 'Error🚫!',
-	done: 'Done✅👍'
+	group: '*command for Group!',
+	private: '*Only Privat Chat!',
+	limit: '*Limit near end!',
+	prem: '*for Users Premium!',
+	wait: '*«««Loading»»»* 🍞...',
+	error: '*Error* 🚫!',
+        process:'*On the way* ⏬⏬',
+	done: '*Done* 🇰🇪🇰🇪🇰🇪✅👍'
 }
 
 global.APIs = {
