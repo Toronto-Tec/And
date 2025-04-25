@@ -183,7 +183,7 @@ async function LoadDataBase(naze, m) {
 			const defaultGroup = {
 				url: '',
 				text: {},
-				warn: {4},
+				warn: {},
 				tagsw: {},
 				nsfw: false,
 				mute: true,
