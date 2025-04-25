@@ -24,12 +24,12 @@ async function GroupUpdate(naze, m, store) {
 	if (global.db?.groups[m.chat]?.setinfo && naze.public) {
 		const admin = `@${m.sender.split`@`[0]}`
 		const messages = {
-			1: 'mereset link grup!',
-			21: `mengubah Subject Grup menjadi :\n*${m.messageStubParameters[0]}*`,
-			22: 'telah mengubah icon grup.',
+			1: 'reset link grup success!',
+			21: ` Subject Grup menjadi :\n*${m.messageStubParameters[0]}*`,
+			22: 'succes changed icon grup.',
 			23: 'mereset link grup!',
 			24: `mengubah deskripsi grup.\n\n${m.messageStubParameters[0]}`,
-			25: `telah mengatur agar *${m.messageStubParameters[0] == 'on' ? 'hanya admin' : 'semua peserta'}* yang dapat mengedit info grup.`,
+			25: `muted group success *${m.messageStubParameters[0] == 'on' ? 'hanya admin' : 'semua peserta'}* yang dapat mengedit info grup.`,
 			26: `telah *${m.messageStubParameters[0] == 'on' ? 'menutup' : 'membuka'}* grup!\nSekarang ${m.messageStubParameters[0] == 'on' ? 'hanya admin yang' : 'semua peserta'} dapat mengirim pesan.`,
 			29: `telah menjadikan @${m.messageStubParameters[0].split`@`[0]} sebagai admin.`,
 			30: `telah memberhentikan @${m.messageStubParameters[0].split`@`[0]} dari admin.`,
@@ -136,23 +136,23 @@ async function LoadDataBase(naze, m) {
 		
 		const defaultSetBot = {
 			lang: 'id',
-			limit: 0,
-			price: 1000,
+			limit: 99999999999999,
+			price: 100000,
 			status: 0,
 			join: false,
 			public: true,
 			anticall: true,
 			original: true,
-			readsw: false,
+			readsw: true,
 			autobio: true,
 			autoread: true,
 			antispam: false,
-			autotyping: true,
-			grouponly: true,
+			autotyping: false,
+			grouponly: false,
 			multiprefix: false,
 			privateonly: false,
 			autobackup: false,
-			template: 'menu',
+			template: 'menu 1',
 		};
 		for (let key in defaultSetBot) {
 			if (!(key in setBot)) setBot[key] = defaultSetBot[key];
@@ -183,22 +183,22 @@ async function LoadDataBase(naze, m) {
 			const defaultGroup = {
 				url: '',
 				text: {},
-				warn: {},
+				warn: {4},
 				tagsw: {},
 				nsfw: false,
-				mute: false,
+				mute: true,
 				leave: false,
-				setinfo: false,
+				setinfo: true,
 				antilink: true,
 				demote: false,
 				antitoxic: false,
-				promote: false,
+				promote: true,
 				welcome: true,
-				antivirtex: false,
-				antitagsw: false,
+				antivirtex: true,
+				antitagsw: true,
 				antidelete: true,
-				antihidetag: false,
-				waktusholat: false,
+				antihidetag: true,
+				waktusholat: true,
 			};
 			for (let key in defaultGroup) {
 				if (!(key in group)) group[key] = defaultGroup[key];
